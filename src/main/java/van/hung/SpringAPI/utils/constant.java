@@ -14,21 +14,21 @@ import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer;
 
 @Configuration
 public class constant {
-	@Bean
-	public MappingJackson2HttpMessageConverter mappingJackson2HttpMessageConverter() {
-	    ObjectMapper mapper = new ObjectMapper();
-	    mapper.configure(SerializationFeature.FAIL_ON_EMPTY_BEANS, false);
-	    MappingJackson2HttpMessageConverter converter = 
-	        new MappingJackson2HttpMessageConverter(mapper);
-	    return converter;
-	}
-	@Bean
-	@Primary
-	    public ObjectMapper objectMapper() {
-	        ObjectMapper mapper = new ObjectMapper();
-	        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-	        mapper.configure(MapperFeature.DEFAULT_VIEW_INCLUSION, true);
+    @Bean
+    public MappingJackson2HttpMessageConverter mappingJackson2HttpMessageConverter() {
+        ObjectMapper mapper = new ObjectMapper();
+        mapper.configure(SerializationFeature.FAIL_ON_EMPTY_BEANS, false);
+        MappingJackson2HttpMessageConverter converter = new MappingJackson2HttpMessageConverter(mapper);
+        return converter;
+    }
 
-	        return mapper;
-	    }
-	}
+    @Bean
+    @Primary
+    public ObjectMapper objectMapper() {
+        ObjectMapper mapper = new ObjectMapper();
+        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        mapper.configure(MapperFeature.DEFAULT_VIEW_INCLUSION, true);
+
+        return mapper;
+    }
+}

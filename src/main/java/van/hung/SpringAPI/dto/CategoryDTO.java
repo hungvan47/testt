@@ -1,4 +1,4 @@
-package van.hung.SpringAPI.DTO;
+package van.hung.SpringAPI.dto;
 
 public class CategoryDTO {
 	private int id_category;

@@ -1,22 +1,26 @@
 package van.hung.SpringAPI.sevice;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
+import lombok.RequiredArgsConstructor;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import van.hung.SpringAPI.DTO.ProductDTO;
+import van.hung.SpringAPI.dto.ProductDTO;
 import van.hung.SpringAPI.model.Category;
 import van.hung.SpringAPI.model.Product;
 import van.hung.SpringAPI.repository.CategoryRepository;
 import van.hung.SpringAPI.repository.ProductRepository;
 @Service
+@RequiredArgsConstructor
 public class ProductManagerImp implements iProductManager{
 	@Autowired
 	ProductRepository productrepository;
-	
+	final ModelMapper modelMapper;
+	final CategoryRepository categoryRepository;
+
 	@Override
 	public List<Product> getProductByName(String name) {
 		// TODO Auto-generated method stub
@@ -69,9 +73,13 @@ public class ProductManagerImp implements iProductManager{
 	}
 
 	@Override
-	public Product addProduct(Product d) {
+	public Product addProduct(ProductDTO d) {
 		// TODO Auto-generated method stub
-		return productrepository.save(d);
+		Product product = modelMapper.map(d,Product.class);
+		Category category = new Category();
+		category.setId_category(d.getId_category());
+		product.setCategory(category);
+		return productrepository.save(product);
 	}
 
 	@Override

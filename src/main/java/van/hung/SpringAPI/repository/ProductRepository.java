@@ -10,8 +10,6 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
-import van.hung.SpringAPI.DTO.ProductDTO;
-import van.hung.SpringAPI.model.Category;
 import van.hung.SpringAPI.model.Product;
 
 @Transactional

@@ -12,11 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import van.hung.SpringAPI.DTO.ProductDTO;
 import van.hung.SpringAPI.model.Customers;
-import van.hung.SpringAPI.model.Product;
 import van.hung.SpringAPI.sevice.iCustomerManager;
-import van.hung.SpringAPI.sevice.iProductManager;
 
 @RequestMapping("/customer")
 @RestController

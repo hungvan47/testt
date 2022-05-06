@@ -1,6 +1,4 @@
-package van.hung.SpringAPI.DTO;
-
-import van.hung.SpringAPI.model.Category;
+package van.hung.SpringAPI.dto;
 
 public class ProductDTO {
 	private int id_product;

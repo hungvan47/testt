@@ -1,19 +1,13 @@
 package van.hung.SpringAPI.sevice;
 
-import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import van.hung.SpringAPI.DTO.ProductDTO;
-import van.hung.SpringAPI.model.Category;
 import van.hung.SpringAPI.model.Customers;
-import van.hung.SpringAPI.model.Product;
-import van.hung.SpringAPI.repository.CategoryRepository;
 import van.hung.SpringAPI.repository.CustomerRepository;
-import van.hung.SpringAPI.repository.ProductRepository;
+
 @Service
 public class CustomerManagerImp implements iCustomerManager{
 	@Autowired

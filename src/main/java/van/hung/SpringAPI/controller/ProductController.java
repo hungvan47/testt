@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import van.hung.SpringAPI.DTO.ProductDTO;
+import van.hung.SpringAPI.dto.ProductDTO;
 import van.hung.SpringAPI.model.Product;
 import van.hung.SpringAPI.sevice.iProductManager;
 
@@ -33,7 +33,7 @@ public class ProductController {
 	}
 	
 	@PostMapping("/addProduct")
-	public Product addProduct(@RequestBody Product d) {
+	public Product addProduct(@RequestBody ProductDTO d) {
 		return iProductManager.addProduct(d);
 	}
 	
